@@ -4,23 +4,7 @@
 # Blog-App
 
 ## Description 🏗️
-A simple blog app for adding, updating, deleting and display blogs. Whatever steps are necessary to get the application up and running are docdumented
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+The Blog app will be a classic example of a blog website. You will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 ## Built With
 
