@@ -4,8 +4,7 @@
 # Blog-App
 
 ## Description 🏗️
-A simple blog app for adding, updating, deleting and display blogs.
-Whatever steps are necessary to get the application up and running are docdumented
+A simple blog app for adding, updating, deleting and display blogs. Whatever steps are necessary to get the application up and running are docdumented
 
 * Ruby version
 
