@@ -11,6 +11,42 @@ The Blog app will be a classic example of a blog website. You will create a full
 - Ruby on Rails
 - PostgreSQL
 
+### Setup
+
+### Clone this repository
+
+```bash
+git clone https://github.com/ogagaoghene/my-blog-app.git
+```
+### Move into the directory with
+
+```bash
+cd my-blog-app
+```
+
+### Run linter
+
+```bash
+rubocop .
+```
+
+### Auto-correct
+
+In auto-correct mode, RuboCop will try to automatically fix offenses:
+
+```bash
+rubocop -A
+```
+
+```bash
+rubocop --auto-correct-all
+```
+### Run Tests
+``.
+rspec spec/model/
+or 
+rspec
+
 ## Author
 
 👤 **Esi Ogagaoghene**
