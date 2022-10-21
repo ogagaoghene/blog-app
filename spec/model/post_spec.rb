@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   subject do
-    Post.new(user_id: 1, title: 'Elden Ring', text: 'Thy Strength befits the Crown', comments_counter: 3,
+    Post.new(user_id: 1, title: 'Rails Recipe', text: 'Learning the fundamentals of Rails', comments_counter: 3,
              likes_counter: 2)
   end
 

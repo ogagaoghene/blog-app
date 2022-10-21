@@ -3,7 +3,7 @@ class Comment < ApplicationRecord
   belongs_to :post
 
   validates :text, presence: true
-  
+
   after_save :update_comments_counter
 
   def update_comments_counter
