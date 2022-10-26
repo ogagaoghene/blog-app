@@ -22,7 +22,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'returns rendering of users' do
-      expect(response.body).to include('Users')
+      expect(response.body).to include('Welcome to user index page')
     end
   end
 

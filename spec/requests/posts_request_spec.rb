@@ -9,7 +9,7 @@ RSpec.describe 'Posts', type: :request do
   before { subject.save }
 
   describe 'GET index' do
-    before do
+    before(:each) do
       get "/users/#{subject.id}/posts"
     end
 
@@ -22,26 +22,27 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders view to include posts by id' do
-      expect(response.body).to include("Posts by #{subject.id}")
+      expect(response.body).to include("List of all Posts by #{subject.id}")
     end
   end
 
   describe 'GET show' do
-    before do
-      new_post = Post.create(author: subject, title: 'Hello', text: 'This is my first post')
+    before(:each) do
+      new_post = Post.create(author: subject, title: 'Hello', text: 'This is my first post', likes_counter: 0,
+                             comments_counter: 0)
       get "/users/#{subject.id}/posts/#{new_post.id}"
     end
 
     it 'returns http success' do
-      expect(response).to have_http_status(:ok)
+      expect(response).to have_http_status :ok
     end
 
-    it 'shows post' do
-      expect(response).to be_ok
+    it 'renders the view' do
+      expect(response).to render_template('show')
     end
 
     it 'renders post details ' do
-      expect(response.body).to include('Posts')
+      expect(response.body).to include('Post')
     end
   end
 end

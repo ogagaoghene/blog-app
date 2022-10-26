@@ -229,7 +229,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.7)
   rails-controller-testing
-  rspec-rails (~> 4.0.0.beta2)
+  rspec-rails
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
   turbolinks (~> 5)
