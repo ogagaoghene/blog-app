@@ -1,2 +1,21 @@
-<h1>Listing Users</h1>
+<h1>User info. by <%= @users.id %></h1>
 <p>Here is a list of users associated with different posts</p>
+<div>
+  <h2><%= @users.name %><h2>
+  <p><%= @users.bio %></p>
+  <img src= '<%= @users.photo %>' alt='photo comes here' width="100" height="100" />
+  <ul>
+    <% @posts = Post.where(user_id: @users.id) %> 
+
+    <% if !@posts %>
+      <p>The list is empty for the posts by the user</p>
+    <% else %>
+      <% @posts.each do |post| %>
+          <li>
+            <h3> <%= post[:title] %> </h3>
+            <p> <%= post[:text] %> </p> 
+          </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

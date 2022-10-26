@@ -1,1 +1,21 @@
-<h1>Posts</h1>
+# <h1>Posts by <%= @users.id %></h1>
+
+<h1>List of all Posts by <%= @users.id %></h1>
+<h3><%= @users.name%></h3>
+<img src= '<%= @users.photo %>' alt='photo comes here' width="100" height="100" />
+
+
+<p>Complete list of all posts made by the user</p>
+<p>
+  <% @posts = Post.where(user_id: @users.id) %> 
+</p>
+<ul>
+    <% @posts.each do |post| %>
+      <li>
+        <h4> <%= post[:title] %> </h4>
+        <p> <%= post[:text] %> </p>
+      </li>
+    <% end %>
+</ul>
+
+

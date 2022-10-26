@@ -5,7 +5,7 @@
 
 ## Description 🏗️
 The Blog app will be a classic example of a blog website. You will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
-In this project, you will create all controllers and views for your Blog app. As you won't be processing any data yet, you will add simple placeholders for your views with plain HTML.
+In this project, you will set up tests on the controllers you recently added to your Blog app.
 
 
 ## Built With
@@ -45,9 +45,9 @@ rubocop --auto-correct-all
 ```
 ### Run Tests
 ``.
-rspec spec/model/
-or 
-rspec
+- rspec spec/requests/users_request_spec.rb
+- rspec spec/requests/posts_request_spec.rb
+
 
 ## Author
 
