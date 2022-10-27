@@ -33,6 +33,12 @@ body {
   width: 100%;
 }
 
+.card__posts_comments ul {
+  border: 1px solid #eee;
+  list-style-type: none;
+  width: 100%;
+}
+
 .grid__container div > ul {
   list-style-type: none;
 }
@@ -204,19 +210,10 @@ body {
   border-radius: 8px;
 }
 
-.card__posts_comments ul {
-  border: 1px solid #eee;
-  list-style-type: none;
-  width: 100%;
-}
-
 .card__posts_comments ul > li {
   margin-bottom: 10px;
   line-height: 10px;
   padding: 10px;
-}
-
-.card__posts_comments ul > li {
   font-weight: 300;
-  font-size: 13px;
+  font-size: 13px
 }
