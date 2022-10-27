@@ -1,3 +1,4 @@
+/* stylelint-disable */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -217,3 +218,4 @@ body {
   font-weight: 300;
   font-size: 13px;
 }
+/* stylelint-enable */
