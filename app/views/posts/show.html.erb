@@ -1,2 +1,22 @@
-<h1>Post</h1>
-<p>Listing of posts for users by their ids</p>
+<section class="grid__container">
+  <h1>Post Details</h1> 
+  <div class="card__posts_by_id">
+    <div>
+      <img src='<%= @posts.author.photo %>' alt='photo comes here' width="100" height="100" />
+      <h2><%= @posts.author.name %></h2>
+    </div>
+    <h3><%= @posts.title %></h3>
+    <p><%= @posts.text %></p>
+    <p>Comments:<%= @posts[:comments_counter] %> Likes: <%= @posts[:likes_counter] %> </p>
+    <ul>
+      <% @posts.comments.each do |comment| %>
+        <li>
+          <h5> <%= comment.author.name %></h5>
+          <p><%= comment.text %> </p>
+        </li>
+      <% end %>
+    </ul>
+  </div> 
+</section>
+
+
