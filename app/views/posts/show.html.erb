@@ -1,22 +1,16 @@
 <section class="grid__container">
-  <h1>Post Details</h1> 
   <div class="card__posts_by_id">
     <div>
-      <img src='<%= @posts.author.photo %>' alt='photo comes here' width="100" height="100" />
-      <h2><%= @posts.author.name %></h2>
+        <span class="left">Post #<%= @posts[:id] %>  by <%= @posts.author.name %> &nbsp; &nbsp;  <span class="right">Comments:<%= @posts[:comments_counter] %> Likes: <%= @posts[:likes_counter] %></span></span>  
     </div>
-    <h3><%= @posts.title %></h3>
-    <p><%= @posts.text %></p>
-    <p>Comments:<%= @posts[:comments_counter] %> Likes: <%= @posts[:likes_counter] %> </p>
-    <ul>
-      <% @posts.comments.each do |comment| %>
-        <li>
-          <h5> <%= comment.author.name %></h5>
-          <p><%= comment.text %> </p>
-        </li>
-      <% end %>
-    </ul>
   </div> 
+  <ul class="card__post_by_id_comments">
+    <% @posts.comments.each do |comment| %>
+      <li>
+        <h5> <%= comment.author.name %>: <%= comment.text %></h5>
+      </li>
+    <% end %>
+  </ul>
 </section>
 
 

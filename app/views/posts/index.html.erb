@@ -9,25 +9,22 @@
 
   <div class="card__posts_comments">
     <ul>
-    <% @posts = Post.where(user_id: @users.id) %> 
-    <% @posts.each do |post| %>
-      <li>
-        <a href="/users/<%= @users.id %>/posts/<%= post.id %>" class = 'user_clickable'>
-          <h3>Post #<%= post[:id] %> <br /></h3>
-          <p> <%= post[:text] %> </p>
-          <p class="comments__likes_counter">Comments: <%= post[:comments_counter] %> &nbsp; Likes: <%= post[:likes_counter] %> </p>
-          <ul>
+      <% @posts = Post.where(user_id: @users.id) %> 
+        <% @posts.each do |post| %>
+        <li>
+          <a href="/users/<%= @users.id %>/posts/<%= post.id %>">
+            <h3>Post #<%= post[:id] %> <br /></h3>
+            <p> <%= post[:text] %> </p>
+            <p class="comments__likes_counter">Comments: <%= post[:comments_counter] %> &nbsp; Likes: <%= post[:likes_counter] %> </p>`
+            <ul>
             <% post.five_recent_comments.each do |comment| %>
               <li>
-                <h5> <%= comment.author.name%></h5>
-                <p><%= comment.text%> </p>
+                <h5> <%= comment.author.name%>: <%= comment.text%> </h5>
               </li>
             <%end%>
           </ul>
-        </a>
-      </li>
-    <% end %>
+            </li>
+        <% end %>
     </ul>
   </div>
 </section>
-
