@@ -39,10 +39,6 @@ In auto-correct mode, RuboCop will try to automatically fix offenses:
 ```bash
 rubocop -A
 ```
-
-```bash
-rubocop --auto-correct-all
-```
 ## Author
 
 👤 **Esi Ogagaoghene**
