@@ -5,7 +5,7 @@
 
 ## Description 🏗️
 The Blog app will be a classic example of a blog website. You will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
-In this project, you will set up tests on the controllers you recently added to your Blog app.
+In this project you will be adding the Views associated with the Models and Controllers you've already created for your Blog App.
 
 
 ## Built With
@@ -39,16 +39,6 @@ In auto-correct mode, RuboCop will try to automatically fix offenses:
 ```bash
 rubocop -A
 ```
-
-```bash
-rubocop --auto-correct-all
-```
-### Run Tests
-``.
-- rspec spec/requests/users_request_spec.rb
-- rspec spec/requests/posts_request_spec.rb
-
-
 ## Author
 
 👤 **Esi Ogagaoghene**
