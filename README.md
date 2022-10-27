@@ -4,8 +4,7 @@
 # Blog-App
 
 ## Description 🏗️
-The Blog app will be a classic example of a blog website. You will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
-In this project you will be adding the Views associated with the Models and Controllers you've already created for your Blog App.
+I added index and show views for both user and post controllers
 
 
 ## Built With
@@ -18,7 +17,7 @@ In this project you will be adding the Views associated with the Models and Cont
 ### Clone this repository
 
 ```bash
-git clone https://github.com/ogagaoghene/my-blog-app.git
+git clone https://github.com/ogagaoghene/my-blog-app.gi
 ```
 ### Move into the directory with
 
@@ -31,6 +30,8 @@ cd my-blog-app
 ```bash
 rubocop .
 ```
+###
+All the commands used after cloning the repo are bundle install, rake db:migrate, rails s 
 
 ### Auto-correct
 
