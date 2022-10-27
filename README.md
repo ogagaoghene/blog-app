@@ -43,12 +43,6 @@ rubocop -A
 ```bash
 rubocop --auto-correct-all
 ```
-### Run Tests
-``.
-- rspec spec/requests/users_request_spec.rb
-- rspec spec/requests/posts_request_spec.rb
-
-
 ## Author
 
 👤 **Esi Ogagaoghene**
