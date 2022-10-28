@@ -163,6 +163,23 @@ body {
   border: 1px solid #eee;
 }
 
+.add_post {
+  background-color: #eee;
+  color: #000;
+  text-decoration: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 45px;
+  width: fit-content;
+  border: 1px solid #eee;
+}
+
+.add_space {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
 .card__posts h5 {
   text-align: center;
   margin-bottom: 15px;
@@ -217,5 +234,26 @@ body {
   padding: 10px;
   font-weight: 300;
   font-size: 13px;
+}
+
+.grid__container .frm_post {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 15px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.grid__container .txt_input {
+  padding: 10px;
+}
+
+.grid__container .bttn_post {
+  background-color: #eee;
+  border: 0;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
 }
 /* stylelint-enable */

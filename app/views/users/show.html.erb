@@ -12,6 +12,11 @@
       <h2>Bio <br />  <p><%= @users.bio %></p></h2>
     </div>
 
+    <div class="add_space">
+      <%= link_to "Add Post", "/users/#{@users.id}/posts/new", {:class => "add_post"}%>
+    </div>
+    
+
     <div class="card__posts">
       <ul>
         <% if @users.posts_counters > 0 %>

@@ -1,0 +1,9 @@
+<section class='grid__container'>
+<h1>Add Post</h1>
+<%= form_with model: @posts, class: 'frm_post', scope: :posts do |f| %>
+  <%= f.label :title, "Title" %>
+  <%= f.text_field :title, placeholder: "Add Title", class: 'txt_input', required: true %>
+  <%= f.text_area :text, placeholder: "Add post", rows: 14, required: true %>
+  <%= f.submit "Add Post", class: 'bttn_post' %>
+<% end %>
+</div>

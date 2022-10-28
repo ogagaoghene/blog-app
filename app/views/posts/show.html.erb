@@ -4,6 +4,15 @@
         <span class="left">Post #<%= @posts[:id] %>  by <%= @posts.author.name %> &nbsp; &nbsp;  <span class="right">Comments:<%= @posts[:comments_counter] %> Likes: <%= @posts[:likes_counter] %></span></span>  
     </div>
   </div> 
+
+  <div>
+    <%= form_with url: "/posts/#{@posts.id}/likes", scope: :like do |f| %>
+      <%= f.submit "Like" %>
+      <% end %>
+      <p>Comments: <%= @posts[:comments_counter] %> Likes: <%= @posts[:likes_counter] %> </p>
+  </div>
+
+  <%= render partial: "add_comments",  local: { post: @posts } %>
   <ul class="card__post_by_id_comments">
     <% @posts.comments.each do |comment| %>
       <li>
@@ -12,5 +21,3 @@
     <% end %>
   </ul>
 </section>
-
-
