@@ -194,20 +194,6 @@ body {
   width: 100%;
 }
 
-.card__posts_by_id .left {
-  display: flex;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: flex-start;
-}
-
-.card__posts_by_id .right {
-  display: flex;
-  font-size: 12px;
-  justify-content: flex-end;
-  width: 100%;
-}
-
 .card__posts_by_id h2 > p {
   font-size: 13px;
   padding-top: 25px;
@@ -255,5 +241,60 @@ body {
   cursor: pointer;
   padding: 10px;
   border-radius: 10px;
+}
+
+.frm_comment {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 100%;
+}
+
+.txtarea_input {
+  padding: 10px;
+  border: 0px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.line_break {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: flex-end;
+}
+
+.bttn_comment {
+  padding: 10px 45px;
+  width: fit-content;
+  background-color: #eee;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #000;
+}
+
+.add_comments_likes {
+  display: flex;
+  margin-bottom: 15px;
+  border: 1px solid #eee;
+  padding: 15px;
+  justify-content: space-between;
+}
+
+.add_comments_likes span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.bttn_likes {
+  margin-right: 10px;
+  font-size: 12px;
+  outline: none;
+  padding: 0 15px;
+}
+
+.bttn_likes:hover {
+  cursor: pointer;
 }
 /* stylelint-enable */
