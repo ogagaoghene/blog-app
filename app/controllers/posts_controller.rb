@@ -9,26 +9,26 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @posts = Post.new
   end
 
   def create
-    new_post = current_user.posts.new(post_data)
-    new_post.likes_counter = 0
-    new_post.comments_counter = 0
+    _add_post = current_user.posts.new(add_post)
+    _add_post.likes_counter = 0
+    _add_post.comments_counter = 0
     respond_to do |format|
       format.html do
-        if new_post.save
-          redirect_to "/users/#{new_post.user_id}/posts/", notice: 'Success Post Saved!'
+        if _add_post.save
+          redirect_to "/users/#{_add_post.user_id}/posts/", notice: 'Success: Post added!'
         else
-          render :new, status: 'Error occured with Post!'
+          render :new, status: 'Error: Post not added!'
         end
       end
     end
   end
 
   private
-  def post_data
+  def add_post
     params.require(:posts).permit(:title, :text)
   end
 
