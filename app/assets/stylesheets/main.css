@@ -163,6 +163,23 @@ body {
   border: 1px solid #eee;
 }
 
+.add_post {
+  background-color: #eee;
+  color: #000;
+  text-decoration: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 45px;
+  width: fit-content;
+  border: 1px solid #eee;
+}
+
+.add_space {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
 .card__posts h5 {
   text-align: center;
   margin-bottom: 15px;
@@ -174,20 +191,6 @@ body {
   border: 1px solid #eee;
   border-radius: 8px;
   margin-bottom: 15px;
-  width: 100%;
-}
-
-.card__posts_by_id .left {
-  display: flex;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: flex-start;
-}
-
-.card__posts_by_id .right {
-  display: flex;
-  font-size: 12px;
-  justify-content: flex-end;
   width: 100%;
 }
 
@@ -217,5 +220,81 @@ body {
   padding: 10px;
   font-weight: 300;
   font-size: 13px;
+}
+
+.grid__container .frm_post {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 15px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.grid__container .txt_input {
+  padding: 10px;
+}
+
+.grid__container .bttn_post {
+  background-color: #eee;
+  border: 0;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.frm_comment {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 100%;
+}
+
+.txtarea_input {
+  padding: 10px;
+  border: 0px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.line_break {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: flex-end;
+}
+
+.bttn_comment {
+  padding: 10px 45px;
+  width: fit-content;
+  background-color: #eee;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #000;
+}
+
+.add_comments_likes {
+  display: flex;
+  margin-bottom: 15px;
+  border: 1px solid #eee;
+  padding: 15px;
+  justify-content: space-between;
+}
+
+.add_comments_likes span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.bttn_likes {
+  margin-right: 10px;
+  font-size: 12px;
+  outline: none;
+  padding: 0 15px;
+}
+
+.bttn_likes:hover {
+  cursor: pointer;
 }
 /* stylelint-enable */

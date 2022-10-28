@@ -1,9 +1,14 @@
 <section class="grid__container">
-  <div class="card__posts_by_id">
-    <div>
-        <span class="left">Post #<%= @posts[:id] %>  by <%= @posts.author.name %> &nbsp; &nbsp;  <span class="right">Comments:<%= @posts[:comments_counter] %> Likes: <%= @posts[:likes_counter] %></span></span>  
-    </div>
-  </div> 
+  <div class="add_comments_likes">
+  <span>Post #<%= @posts[:id] %>  by <%= @posts.author.name %></span>
+    <%= form_with url: "/posts/#{@posts.id}/likes", scope: :like do |f| %>
+      
+      <span class="right"><%= f.submit "Like", class: 'bttn_likes' %>
+      Comments: <%= @posts[:comments_counter] %> Likes: <%= @posts[:likes_counter] %> </span>
+      <% end %> 
+  </div>
+
+  <div><%= render partial: "add_comments",  local: { post: @posts } %></div>
   <ul class="card__post_by_id_comments">
     <% @posts.comments.each do |comment| %>
       <li>
@@ -12,5 +17,3 @@
     <% end %>
   </ul>
 </section>
-
-

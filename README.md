@@ -4,8 +4,7 @@
 # Blog-App
 
 ## Description 🏗️
-I added index and show views for both user and post controllers
-
+I will add forms to allow users to add comments and likes to posts on behalf of the correct user
 
 ## Built With
 
@@ -17,7 +16,7 @@ I added index and show views for both user and post controllers
 ### Clone this repository
 
 ```bash
-git clone https://github.com/ogagaoghene/my-blog-app.gi
+git clone https://github.com/ogagaoghene/my-blog-app.git
 ```
 ### Move into the directory with
 
@@ -30,8 +29,6 @@ cd my-blog-app
 ```bash
 rubocop .
 ```
-###
-All the commands used after cloning the repo are bundle install, rake db:migrate, rails s 
 
 ### Auto-correct
 
@@ -39,7 +36,13 @@ In auto-correct mode, RuboCop will try to automatically fix offenses:
 
 ```bash
 rubocop -A
-```
+
+### Commands
+I will be using the following commands:
+rake db:migrate
+bundle install
+rails g controller ControllerName Action1 Action2 
+
 ## Author
 
 👤 **Esi Ogagaoghene**
