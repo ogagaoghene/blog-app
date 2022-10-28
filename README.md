@@ -4,9 +4,11 @@
 # Blog-App
 
 ## Description 🏗️
-The Blog app will be a classic example of a blog website. You will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
-In this project you will be adding the Views associated with the Models and Controllers you've already created for your Blog App.
-
+I will add a uset as the current_user in the ApplicationController to make current user data available to all controllers, and It will return the first user from the database. 
+I will create forms to perform the following functions:
+ - Creates a Post on behalf of the current_user 
+ - Create a comment on behalf of the current_user 
+I will Allow Users to add likes to Posts.
 
 ## Built With
 
@@ -38,7 +40,13 @@ In auto-correct mode, RuboCop will try to automatically fix offenses:
 
 ```bash
 rubocop -A
-```
+
+### Commands
+I will be using the following commands:
+rake db:migrate
+bundle install
+rails g controller ControllerName Action1 Action2 
+
 ## Author
 
 👤 **Esi Ogagaoghene**
