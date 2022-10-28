@@ -4,11 +4,7 @@
 # Blog-App
 
 ## Description 🏗️
-I will add a uset as the current_user in the ApplicationController to make current user data available to all controllers, and It will return the first user from the database. 
-I will create forms to perform the following functions:
- - Creates a Post on behalf of the current_user 
- - Create a comment on behalf of the current_user 
-I will Allow Users to add likes to Posts.
+I will add forms to allow users to add comments and likes to posts on behalf of the correct user
 
 ## Built With
 
