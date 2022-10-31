@@ -72,7 +72,7 @@ RSpec.configure do |config|
   config.before(:each, js: true) do
     DatabaseCleaner.strategy = :truncation
   end
-  
+
   config.before(:each) do
     DatabaseCleaner.start
   end
@@ -82,3 +82,4 @@ RSpec.configure do |config|
   end
 end
 
+Capybara.default_driver = :selenium_chrome
