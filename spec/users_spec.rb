@@ -3,8 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Users', type: :system do 
   scenario 'index page' do 
     visit users_path
-    expect(page).to(have_content('Tom'))
-    expect(page).to(have_content('Lilly'))
+    expect(page).to(have_content('Esi Ogagaoghene'))
   end 
 end 
 # RSpec.describe 'My Blog Post View', type: :system do 
