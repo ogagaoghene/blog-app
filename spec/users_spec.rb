@@ -1,14 +1,17 @@
 require 'rails_helper'
+require 'webdrivers'
 
 RSpec.describe 'My Blog Post View', type: :system do 
   subject do
-    User.create(id: 1, name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Nigeria.',
+    User.new(id: 1, name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Nigeria.',
              posts_counters: 0)
   end
 
-  describe 'posts index page' do
+  before { subject.save }
+
+  describe 'users index page' do
     before do
-      visit 'users/1/posts'
+      visit "/users/#{subject.id}/posts"
     end
 
     it 'contains names of users' do

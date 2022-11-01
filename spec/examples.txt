@@ -1,3 +1,4 @@
-example_id                  | status | run_time              |
---------------------------- | ------ | --------------------- |
-./spec/posts_spec.rb[1:1:1] | failed | 2 minutes 7.4 seconds |
+example_id                  | status | run_time               |
+--------------------------- | ------ | ---------------------- |
+./spec/posts_spec.rb[1:1:1] | failed | 2 minutes 17.9 seconds |
+./spec/users_spec.rb[1:1:1] | failed | 2 minutes 16.6 seconds |
