@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 # require 'selenium-webdriver'
@@ -108,4 +109,4 @@ RSpec.configure do |config|
   end
 end
 
-# Capybara.default_driver = :selenium
+# rubocop:enable Metrics/BlockLength

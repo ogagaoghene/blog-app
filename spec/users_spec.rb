@@ -44,17 +44,17 @@ RSpec.describe 'Users', type: :system do
       expect(page).to have_content('Number of posts: 2')
     end
 
-    it 'should show number of posts for users' do 
+    it 'should show number of posts for users' do
       visit 'users/'
       posts_counter = page.all('.posts-counter')
       expect(posts_counter[0]).to have_content('Number of posts: 1')
       expect(posts_counter[1]).to have_content('Number of posts: 6')
-    end 
+    end
 
-    it 'should show number of posts for user -> Lilly' do 
+    it 'should show number of posts for user -> Lilly' do
       visit 'users/2'
       expect(page).to have_content('Number of posts: 1')
-    end 
+    end
 
     describe 'show page' do
       it 'should render the profile page of the user' do

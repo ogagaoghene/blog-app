@@ -1,7 +1,9 @@
-#rubocop:diaable all
 AllCops:
   NewCops: enable
   Exclude:
+    - "db/**/*"
+    - "bin/*" 
+    - "config/**/*"
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
@@ -9,17 +11,22 @@ AllCops:
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 200
+  Max: 120
 Metrics/MethodLength:
+  Include:
+    - "app/controllers/*"
+    - "app/models/*"
   Max: 20
 Metrics/AbcSize:
+  Include:
+    - "app/controllers/*"
+    - "app/models/*"
   Max: 50
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
   IgnoredMethods: ['describe']
-  Max: 50
-
+  Max: 30
 
 Style/Documentation:
   Enabled: false
@@ -53,4 +60,3 @@ Style/HashTransformValues:
   Enabled: false
 Style/EndOfLine:
   EnforcedStyle: lf
-#ruboco:enable all
