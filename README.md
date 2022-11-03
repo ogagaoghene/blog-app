@@ -4,7 +4,7 @@
 # Blog-App
 
 ## Description 🏗️
-In this project, I will add Integration specs and fix n+1 issues as they occur
+In this project, I will add the devise gem to my app and use it for the registration and login of users.
 
 ## Built With
 
