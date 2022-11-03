@@ -4,7 +4,7 @@
 # Blog-App
 
 ## Description 🏗️
-In this project, I will add Integration specs and fix 1+n issues
+In this project, I will add Integration specs and fix n+1 issues should they occur
 
 ## Built With
 
