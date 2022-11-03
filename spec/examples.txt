@@ -35,7 +35,7 @@ example_id                                         | status  | run_time        |
 ./spec/requests/users_request_spec.rb[1:2:1]       | passed  | 0.0249 seconds  |
 ./spec/requests/users_request_spec.rb[1:2:2]       | failed  | 0.08516 seconds |
 ./spec/requests/users_request_spec.rb[1:2:3]       | failed  | 0.02844 seconds |
-./spec/users_spec.rb[1:1]                          | passed  | 14.59 seconds   |
+./spec/users_spec.rb[1:1]                          | failed  | 19.53 seconds   |
 ./spec/views/comments/create.html.erb_spec.rb[1:1] | pending | 0.00001 seconds |
 ./spec/views/comments/new.html.erb_spec.rb[1:1]    | pending | 0.00001 seconds |
 ./spec/views/likes/create.html.erb_spec.rb[1:1]    | pending | 0.00001 seconds |
