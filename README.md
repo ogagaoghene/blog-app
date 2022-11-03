@@ -4,7 +4,7 @@
 # Blog-App
 
 ## Description 🏗️
-I will add forms to allow users to add comments and likes to posts on behalf of the correct user
+In this project, I will add the devise gem to my app and use it for the registration and login of users.
 
 ## Built With
 
