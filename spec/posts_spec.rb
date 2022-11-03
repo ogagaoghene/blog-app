@@ -57,4 +57,14 @@ RSpec.describe 'Posts', type: :system do
     visit '/users/1/posts'
     expect(page).to(have_content('Likes: 1'))
   end
+
+  scenario 'page should display the body of post' do
+    visit '/users/1/posts'
+    expect(page).to(have_content('This is my first post'))
+  end
+
+  scenario 'page should display the first comment of a post' do
+    visit '/users/1/posts'
+    expect(page).to have_content('Hi Ronaldo!')
+  end
 end
