@@ -22,7 +22,7 @@
         <% if @users.posts_counters > 0 %>
         <% @posts = Post.where(user_id: @users.id) %> 
         <% @users.three_recent_posts.each do |post| %>
-          <li class="post">
+          <li>
             <a href="/users/<%= @users.id %>/posts/<%= post.id %>" class = 'user_clickable'>
               <h3>Post #<%= post[:id] %> <br /></h3>
               <p> <%= post[:text] %> </p>

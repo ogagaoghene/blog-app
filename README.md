@@ -4,14 +4,12 @@
 # Blog-App
 
 ## Description 🏗️
-In this project, I will add Integration specs and fix n+1 issues as they occur
+I will add forms to allow users to add comments and likes to posts on behalf of the correct user
 
 ## Built With
 
 - Ruby on Rails
 - PostgreSQL
-- Capybara
-- Selenium
 
 ### Setup
 
@@ -25,9 +23,6 @@ git clone https://github.com/ogagaoghene/my-blog-app.git
 ```bash
 cd my-blog-app
 ```
-### Run linter
-- bundle exec rspec spec/users_spec.rb
-- bundle exec rspec spec/posts_spec.rb
 
 ### Run linter
 
@@ -46,7 +41,7 @@ rubocop -A
 I will be using the following commands:
 rake db:migrate
 bundle install
-r
+rails g controller ControllerName Action1 Action2 
 
 ## Author
 
