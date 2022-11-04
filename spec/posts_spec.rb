@@ -30,41 +30,16 @@ RSpec.describe 'Posts', type: :system do
 
   scenario 'page should show the number of comments' do
     visit '/users/1/posts/1'
-    expect(page).to(have_content('Comments: 1'))
+    expect(page).to(have_content('Comments: 0'))
   end
 
-  scenario 'page should display the number of likes' do
+  scenario 'page should display the number the number of likes' do
     visit '/users/1/posts/1'
-    expect(page).to(have_content('Likes: 1'))
+    expect(page).to(have_content('Likes: 0'))
   end
 
   scenario 'display number of posts' do
-    visit '/users/1/posts'
-    expect(page).to(have_content('Number of posts: 2'))
-  end
-
-  scenario 'page should display number of comments' do
-    visit '/users/1/posts'
-    expect(page).to(have_content('Comments: 1'))
-  end
-
-  scenario 'page should show the number of comments for a post' do
-    visit '/users/1/posts'
-    expect(page).to(have_content('Comments: 1'))
-  end
-
-  scenario 'page should display the number of likes for a post' do
-    visit '/users/1/posts'
-    expect(page).to(have_content('Likes: 1'))
-  end
-
-  scenario 'page should display the body of post' do
-    visit '/users/1/posts'
-    expect(page).to(have_content('This is my first post'))
-  end
-
-  scenario 'page should display the first comment of a post' do
-    visit '/users/1/posts'
-    expect(page).to have_content('Hi Ronaldo!')
+    visit '/users/2/posts'
+    expect(page).to(have_content('Number of posts: 0'))
   end
 end

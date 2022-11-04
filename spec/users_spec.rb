@@ -36,24 +36,7 @@ RSpec.describe 'Users', type: :system do
       visit users_path
       link = page.first('a')
       link.click
-      expect(page).to have_current_path('/users/2')
-    end
-
-    it 'should render the number of posts for user -> Tom' do
-      visit 'users/1'
-      expect(page).to have_content('Number of posts: 2')
-    end
-
-    it 'should show number of posts for users' do
-      visit 'users/'
-      posts_counter = page.all('.posts-counter')
-      expect(posts_counter[0]).to have_content('Number of posts: 1')
-      expect(posts_counter[1]).to have_content('Number of posts: 6')
-    end
-
-    it 'should show number of posts for user -> Lilly' do
-      visit 'users/2'
-      expect(page).to have_content('Number of posts: 1')
+      expect(page).to have_current_path('/users/1')
     end
 
     describe 'show page' do
@@ -65,17 +48,17 @@ RSpec.describe 'Users', type: :system do
 
       it 'should display the name of the user' do
         visit '/users/1'
-        expect(page).to have_content('Tom')
+        expect(page).to have_content('Lilly')
       end
 
       it 'should display the post counter of the user' do
         visit '/users/1'
-        expect(page).to have_content('Number of posts: 2')
+        expect(page).to have_content('Number of posts: 0')
       end
 
       it 'should display the bio of users' do
         visit '/users/1'
-        expect(page).to have_content('Teacher from Mexico.')
+        expect(page).to have_content('Teacher from Poland.')
       end
     end
   end
