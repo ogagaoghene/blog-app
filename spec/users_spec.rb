@@ -8,13 +8,9 @@ RSpec.describe 'Users', type: :system do
     User.create(name: 'Tom',
                 photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                 bio: 'Teacher from Mexico.', posts_counters: 0)
-    Post.create(author: @lilly, title: 'first post', text: 'This my first post', likes_counter: 0,
+    Post.create(author: @lilly, title: 'Post 1 by Lilly', text: 'This is the third post test by Lilly', likes_counter: 0,
                 comments_counter: 0)
-    Post.create(author: @lilly, title: 'second post', text: 'This my second post', likes_counter: 0,
-                comments_counter: 0)
-    Post.create(author: @lilly, title: 'third post', text: 'This is my third post', likes_counter: 0,
-                comments_counter: 0)
-    Post.create(author: @lilly, title: 'fourth post', text: 'This is my fourth post', likes_counter: 0,
+    Post.create(author: @lilly, title: 'Post 2 by Lilly', text: 'TThis is the fourth post test by Lilly', likes_counter: 0,
                 comments_counter: 0)
   end
 
@@ -48,17 +44,17 @@ RSpec.describe 'Users', type: :system do
 
       it 'should display the name of the user' do
         visit '/users/1'
-        expect(page).to have_content('Lilly')
+        expect(page).to have_content('Tom')
       end
 
       it 'should display the post counter of the user' do
         visit '/users/1'
-        expect(page).to have_content('Number of posts: 0')
+        expect(page).to have_content('Number of posts: 2')
       end
 
       it 'should display the bio of users' do
         visit '/users/1'
-        expect(page).to have_content('Teacher from Poland.')
+        expect(page).to have_content('Teacher from Mexico.')
       end
     end
   end

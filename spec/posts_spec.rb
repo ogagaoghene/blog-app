@@ -5,10 +5,10 @@ RSpec.describe 'Posts', type: :system do
     @lilly = User.create(name: 'Lilly',
                          photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                          bio: 'Teacher from Poland.', posts_counters: 0)
-    @first_post = Post.create(author: @lilly, title: 'first post', text: 'This is my first post', likes_counter: 0,
+    @first_post = Post.create(author: @lilly, title: 'Post 1 by Lilly', text: 'This is the third post test by Lilly', likes_counter: 0,
                               comments_counter: 0)
-    Comment.create(author: @lilly, post: @first_post, text: 'Your comment is on point')
-    Post.create(author: @lilly, title: 'second post', text: 'This is my second post', likes_counter: 0,
+    Comment.create(author: @lilly, post: @first_post, text: 'Comment 3')
+    Post.create(author: @lilly, title: 'Post 2 by Lilly', text: 'This is the fourth post test by Lilly', likes_counter: 0,
                 comments_counter: 0)
   end
 
@@ -20,17 +20,17 @@ RSpec.describe 'Posts', type: :system do
 
   scenario 'page should display name of user' do
     visit '/users/1/posts'
-    expect(page).to(have_content('Lilly'))
+    expect(page).to(have_content('Tom'))
   end
 
   scenario 'page should display the author of the posts' do
     visit '/users/1/posts/1'
-    expect(page).to have_content('Lilly')
+    expect(page).to have_content('Tom')
   end
 
   scenario 'page should show the number of comments' do
     visit '/users/1/posts/1'
-    expect(page).to(have_content('Comments: 0'))
+    expect(page).to(have_content('Comments: 2'))
   end
 
   scenario 'page should display the number the number of likes' do
@@ -40,6 +40,6 @@ RSpec.describe 'Posts', type: :system do
 
   scenario 'display number of posts' do
     visit '/users/2/posts'
-    expect(page).to(have_content('Number of posts: 0'))
+    expect(page).to(have_content('Number of posts: 2'))
   end
 end
