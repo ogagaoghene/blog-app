@@ -4,7 +4,7 @@
 # Blog-App
 
 ## Description 🏗️
-In this project, I will add Integration specs and fix n+1 issues as they occur
+In this project I will add integration tests using Capybara, RSpec, Selenium. I will also solve n+1 problems that occur in the app.
 
 ## Built With
 
