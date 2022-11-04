@@ -5,11 +5,11 @@ RSpec.describe 'Posts', type: :system do
     @lilly = User.create(name: 'Lilly',
                          photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                          bio: 'Teacher from Poland.', posts_counters: 0)
-    @first_post = Post.create(author: @lilly, title: 'Post 1 by Lilly', text: 'This is the third post test by Lilly', likes_counter: 0,
-                              comments_counter: 0)
+    @first_post = Post.create(author: @lilly, title: 'Post 1 by Lilly', text: 'This is the third post test by Lilly',
+                              likes_counter: 0, comments_counter: 0)
     Comment.create(author: @lilly, post: @first_post, text: 'Comment 3')
-    Post.create(author: @lilly, title: 'Post 2 by Lilly', text: 'This is the fourth post test by Lilly', likes_counter: 0,
-                comments_counter: 0)
+    Post.create(author: @lilly, title: 'Post 2 by Lilly', text: 'This is the fourth post test by Lilly',
+                likes_counter: 0, comments_counter: 0)
   end
 
   scenario 'page should have images of users' do
@@ -40,6 +40,22 @@ RSpec.describe 'Posts', type: :system do
 
   scenario 'display number of posts' do
     visit '/users/2/posts'
-    expect(page).to(have_content('Number of posts: 2'))
+    expect(page).to(have_content('Number of posts: 3'))
+  end
+
+  scenario 'page should show the dewcription of a post' do
+    visit '/users/1/posts'
+    expect(page).to have_content('Comment 1')
+  end
+
+  scenario 'page should show the first comment of a post' do
+    visit '/users/1/posts'
+    expect(page).to have_content('Comment 1')
+  end
+
+  scenario 'page should show the name of a user that makes a comment' do
+    visit '/users/1/posts/1'
+    expect(page).to have_content('Tom')
+    expect(page).to have_content('Lilly')
   end
 end
