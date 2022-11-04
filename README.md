@@ -4,12 +4,16 @@
 # Blog-App
 
 ## Description 🏗️
-I will add forms to allow users to add comments and likes to posts on behalf of the correct user
+
+In this project I will add integration tests using Capybara, RSpec, Selenium. I will also solve n+1 problems that occur in the app.
 
 ## Built With
 
 - Ruby on Rails
 - PostgreSQL
+- Capybara
+- Selenium
+- RSpec
 
 ### Setup
 
