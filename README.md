@@ -4,14 +4,13 @@
 # Blog-App
 
 ## Description 🏗️
-In this project, I will add Integration specs and fix n+1 issues as they occur
+In this project, I will add authorization to my app using CanCanCan.
 
 ## Built With
 
 - Ruby on Rails
 - PostgreSQL
-- Capybara
-- Selenium
+- CanCanCan
 
 ### Setup
 
