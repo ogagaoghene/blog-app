@@ -6,7 +6,7 @@ RSpec.describe Like, type: :model do
                     posts_counters: 0)
     post = Post.new(user_id: user, title: 'Rails Recipe', text: 'Fundamentals of Rails', comments_counter: 3,
                     likes_counter: 0)
-    Like.new(author: user, post: post)
+    Like.new(author: user, post:)
   end
 
   it 'is valid with valid attributes' do
