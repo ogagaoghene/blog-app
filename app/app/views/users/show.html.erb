@@ -1,0 +1,45 @@
+<section class="grid__container">
+  <div>
+    <div class="card">
+      <img src= '<%= @users.photo %>' alt="user image" width="100" height="100" />
+      <div>
+        <h3><%= @users.name %></h3>
+        <p>Number of posts:  <%= @users.posts_counters %></p>
+      </div>
+    </div>
+
+    <div class="card__bio">
+      <h2>Bio <br />  <p><%= @users.bio %></p></h2>
+    </div>
+
+    <div class="add_space">
+      <%= link_to "Add Post", "/users/#{@users.id}/posts/new", {:class => "add_post"}%>
+    </div>
+    
+
+    <div class="card__posts">
+      <ul>
+        <% if @users.posts_counters > 0 %>
+        <% @posts = Post.where(user_id: @users.id) %> 
+        <% @users.three_recent_posts.each do |post| %>
+          <li class="post">
+            <a href="/users/<%= @users.id %>/posts/<%= post.id %>" class = 'user_clickable'>
+              <h3>Post #<%= post[:id] %> <br /></h3>
+              <p> <%= post[:text] %> </p>
+              <p class="comments__likes_counter">Comments: <%= post[:comments_counter] %> &nbsp; Likes: <%= post[:likes_counter] %> </p>
+            </a>
+          </li>
+        <% end %>
+        <br />
+        <h5>
+          <%= link_to "See all posts", user_posts_path(@users), {:class => "view__all_post"}%>
+          <% else %>
+            <p>The list is empty for the user</p>
+          <% end %>
+        </h5>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
