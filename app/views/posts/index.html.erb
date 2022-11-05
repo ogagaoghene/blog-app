@@ -1,30 +1,33 @@
-<section class="grid__container">
-  <div class="card">
-    <img src= '<%= @users.photo %>' alt="user image" width="100" height="100" />
-    <div>
-      <h3><%= @users.name %></h3>
-      <p>Number of posts:  <%= @users.posts_counters %></p>
+<section class="container">
+  <div class="user-header"> 
+    <div class="user-icon">
+      <i class="fa fa-user"></i>
     </div>
+    <div class="user_name">
+      <h1><%=@user.name%>
+    </div>
+    <h4>Number of posts: <%= @user.postscounter %></h4>
+    <div class="btn_create_post">
+        <%= link_to "Create New Post", new_user_post_path , class: "btn_post_new" %>
+     </div>
   </div>
-
-  <div class="card__posts_comments">
-    <ul>
-      <% @posts = Post.where(user_id: @users.id) %> 
-        <% @posts.each do |post| %>
-        <li>
-          <a href="/users/<%= @users.id %>/posts/<%= post.id %>">
-            <h3>Post #<%= post[:id] %> <br /></h3>
-            <p> <%= post[:text] %> </p>
-            <p class="comments__likes_counter">Comments: <%= post[:comments_counter] %> &nbsp; Likes: <%= post[:likes_counter] %> </p>`
-            <ul>
-            <% post.five_recent_comments.each do |comment| %>
-              <li>
-                <h5> <%= comment.author.name%>: <%= comment.text%> </h5>
-              </li>
+  <% @posts.each_with_index do |post, index| %>
+      <%=link_to user_post_path(@user.id,post.id) do %>
+        <div class="user_post">
+            <div>
+              <h3>Post #<%=index+1%>: <%= post.title %></h3>
+              <p><%= post.text %></p>
+            </div>
+              <h4><span>Comment <%= post.commentscounter %></span> <span>|</span> <span>Likes <%= post.likescounter %></span></h4>
+        </div>
+      <% end %>
+       <% if post.recent_comments.length == 0 %>
+            <p>No comments Available!</p>
+          <% else %>
+            <% post.recent_comments.each do |comment| %>
+              <p><%=comment.user.name %>: <%=comment.Text %></p>
             <%end%>
-          </ul>
-            </li>
-        <% end %>
-    </ul>
-  </div>
+          <% end %>
+    <% end %>
+    <button>Pagination</button>
 </section>

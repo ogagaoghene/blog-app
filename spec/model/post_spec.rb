@@ -1,50 +1,33 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe Post, type: :model do
-  subject do
-    Post.new(user_id: 1, title: 'Rails Recipe', text: 'Learning the fundamentals of Rails', comments_counter: 3,
-             likes_counter: 2)
-  end
+# RSpec.describe Post, type: :model do
+#   before(:all) do
+#     user = User.new(name: 'Test', postscounter: 0)
+#     user.save
+#   end
 
-  before { subject.save }
+#   subject { Post.new(title: 'Title', text: 'test', commentscounter: 1, likescounter: 0, user_id: 1) }
 
-  it 'title should be present' do
-    subject.title = nil
-    expect(subject).to_not be_valid
-  end
+#   before { subject.save }
 
-  it 'text should be present' do
-    subject.text = nil
-    expect(subject).to_not be_valid
-  end
+#   context 'validations' do
+#     it 'Comments_counter should be integer' do
+#       expect(subject).to be_valid
+#     end
+#     it 'Title should be present' do
+#       subject.title = nil
+#       expect(subject).to_not be_valid
+#     end
 
-  it 'comments_counter should be present' do
-    subject.comments_counter = nil
-    expect(subject).to_not be_valid
-  end
+#     it 'Commentscounter should be present' do
+#       subject.commentscounter = nil
+#       expect(subject).to_not be_valid
+#     end
 
-  it 'comments_counter should not be string' do
-    subject.comments_counter = 'abc'
-    expect(subject).to_not be_valid
-  end
-
-  it 'comments_counter should not be negative' do
-    subject.comments_counter = -1
-    expect(subject).to_not be_valid
-  end
-
-  it 'likes_counter should be present' do
-    subject.likes_counter = nil
-    expect(subject).to_not be_valid
-  end
-
-  it 'likes_counter should not be string' do
-    subject.likes_counter = 'abc'
-    expect(subject).to_not be_valid
-  end
-
-  it 'likes_counter should not be negative' do
-    subject.likes_counter = -1
-    expect(subject).to_not be_valid
-  end
-end
+#     it 'Increases the comments' do
+#       counter = User.find(1).postscounter
+#       subject.update_post_counter
+#       expect(User.find(1).postscounter).to eq(counter + 1)
+#     end
+#   end
+# end

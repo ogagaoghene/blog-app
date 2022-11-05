@@ -1,28 +1,18 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: 'User', foreign_key: 'user_id'
-  has_many :likes
+  belongs_to :user
   has_many :comments
+  has_many :likes
+  after_save :update_post_counter
 
-  validates :title, presence: true,
-                    length: { in: 3...250, too_short: 'Title must not be shorter than 3 characters.',
-                              too_long: 'Title must not exceed 250 characters.' }
-  validates :text, presence: true
-  validates :comments_counter, :likes_counter, presence: true,
-                                               numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-  after_save :update_posts_counter
-  after_initialize :init
+  validates :title, presence: true, length: { maximum: 250 }
+  validates :commentscounter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
+  validates :likescounter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
 
-  def five_recent_comments
-    comments.order('created_at Desc').limit(5)
+  def update_post_counter
+    user.increment!(:postscounter)
   end
 
-  private
-  def update_posts_counter
-    author.increment!(:posts_counters)
-  end
-
-  def init
-    self.comments_counter ||= 0
-    self.likes_counter ||= 0
+  def recent_comments
+    comments.order('created_at Desc').last(5)
   end
 end

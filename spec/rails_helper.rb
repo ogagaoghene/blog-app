@@ -1,16 +1,12 @@
-# rubocop:disable Metrics/BlockLength
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
-# require 'selenium-webdriver'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
-# require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
-# Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rspec'
-require 'bullet'
+# Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -32,27 +28,24 @@ require 'bullet'
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
-  abort e.to_s.strip
+  puts e.to_s.strip
+  exit 1
 end
 
+Capybara.register_driver :selenium_chrome do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+Capybara.javascript_driver = :selenium_chrome
 RSpec.configure do |config|
-  Capybara.register_driver :selenium_chrome do |app|
-    Capybara::Selenium::Driver.new(app, browser: :chrome)
-  end
-  Capybara.javascript_driver = :selenium_chrome
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
-  Capybara.configure do |c|
-    c.run_server = false
-    c.app_host = 'http://127.0.0.1:3000'
-    c.server_port = 3000
-    c.default_host = 'http://127.0.0.1:3000'
-  end
+
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = false
-  config.include Capybara::DSL
+
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
 
@@ -86,7 +79,6 @@ RSpec.configure do |config|
   config.before(:each, js: true) do
     DatabaseCleaner.strategy = :truncation
   end
-
   # This block must be here, do not combine with the other `before(:each)` block.
   # This makes it so Capybara can see the database.
   config.before(:each) do
@@ -96,17 +88,4 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
-
-  if Bullet.enable?
-    config.before(:each) do
-      Bullet.start_request
-    end
-
-    config.after(:each) do
-      Bullet.perform_out_of_channel_notifications if Bullet.notification?
-      Bullet.end_request
-    end
-  end
 end
-
-# rubocop:enable Metrics/BlockLength

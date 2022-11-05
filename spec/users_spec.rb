@@ -8,14 +8,11 @@ RSpec.describe 'Users', type: :system do
     User.create(name: 'Tom',
                 photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                 bio: 'Teacher from Mexico.', posts_counters: 0)
-    Post.create(author: @lilly, title: 'first post', text: 'This my first post', likes_counter: 0,
+    Post.create(author: @lilly, title: 'Post 1 by Lilly', text: 'This is the third post test by Lilly',
+                likes_counter: 0,
                 comments_counter: 0)
-    Post.create(author: @lilly, title: 'second post', text: 'This my second post', likes_counter: 0,
-                comments_counter: 0)
-    Post.create(author: @lilly, title: 'third post', text: 'This is my third post', likes_counter: 0,
-                comments_counter: 0)
-    Post.create(author: @lilly, title: 'fourth post', text: 'This is my fourth post', likes_counter: 0,
-                comments_counter: 0)
+    Post.create(author: @lilly, title: 'Post 2 by Lilly', text: 'TThis is the fourth post test by Lilly',
+                likes_counter: 0, comments_counter: 0)
   end
 
   describe 'index page' do
@@ -36,24 +33,21 @@ RSpec.describe 'Users', type: :system do
       visit users_path
       link = page.first('a')
       link.click
-      expect(page).to have_current_path('/users/2')
+      expect(page).to have_current_path('/users/1')
     end
 
-    it 'should render the number of posts for user -> Tom' do
-      visit 'users/1'
-      expect(page).to have_content('Number of posts: 2')
-    end
-
-    it 'should show number of posts for users' do
-      visit 'users/'
+    it 'shows the number of posts each user has written' do
+      visit users_path
       posts_counter = page.all('.posts-counter')
-      expect(posts_counter[0]).to have_content('Number of posts: 1')
-      expect(posts_counter[1]).to have_content('Number of posts: 6')
+      expect(posts_counter[0]).to have_content('Number of posts: 3')
+      expect(posts_counter[1]).to have_content('Number of posts: 3')
     end
 
-    it 'should show number of posts for user -> Lilly' do
-      visit 'users/2'
-      expect(page).to have_content('Number of posts: 1')
+    it 'when I click on a user, I am redirected to that users show page' do
+      visit users_path
+      link = page.first('a')
+      link.click
+      expect(page).to have_current_path('/users/1')
     end
 
     describe 'show page' do
@@ -70,7 +64,7 @@ RSpec.describe 'Users', type: :system do
 
       it 'should display the post counter of the user' do
         visit '/users/1'
-        expect(page).to have_content('Number of posts: 2')
+        expect(page).to have_content('Number of posts: 3')
       end
 
       it 'should display the bio of users' do
