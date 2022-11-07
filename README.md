@@ -4,7 +4,7 @@
 # Blog-App
 
 ## Description 🏗️
-I will add forms to allow users to add comments and likes to posts on behalf of the correct user
+I will add integration specs and fix n+1 problem
 
 ## Built With
 
