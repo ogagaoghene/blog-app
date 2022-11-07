@@ -31,7 +31,7 @@ begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
-end
+endGIT
 
 RSpec.configure do |config|
   Capybara.register_driver :selenium_chrome do |app|
