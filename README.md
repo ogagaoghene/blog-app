@@ -12,6 +12,11 @@ I will add integration specs and fix n+1 problem
 - PostgreSQL
 
 ### Setup
+rails webpacker:install
+bundle exec rake assets:precompile
+rails db:migrate RAILS_ENV=test
+rails db:migrate RAILS_ENV=development 
+
 
 ### Clone this repository
 
@@ -41,13 +46,8 @@ rubocop -A
 - bundle exec rspec spec/users_spec.rb
 - bundle exec rspec spec/posts_spec.rb 
 
-### Commands
-I will be using the following commands:
-rake db:migrate
-bundle install
-rails g controller ControllerName Action1 Action2 
 
-## Author
+## Authors
 
 👤 **Esi Ogagaoghene**
 

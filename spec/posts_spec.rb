@@ -43,7 +43,7 @@ RSpec.describe 'Posts', type: :system do
     expect(page).to(have_content('Number of posts: 3'))
   end
 
-  scenario 'page should show the dewcription of a post' do
+  scenario 'page should show the description of a post' do
     visit '/users/1/posts'
     expect(page).to have_content('Comment 1')
   end
