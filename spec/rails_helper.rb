@@ -1,6 +1,5 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
-require 'selenium-webdriver'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
@@ -31,7 +30,13 @@ begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
-endGIT
+end
+
+# Capybara.register_driver :selenium_chrome do |app|
+#   Capybara::Selenium::Driver.new(app, browser: :chrome)
+# end
+
+# Capybara.javascript_driver = :selenium_chrome
 
 RSpec.configure do |config|
   Capybara.register_driver :selenium_chrome do |app|
@@ -39,7 +44,6 @@ RSpec.configure do |config|
   end
 
   Capybara.javascript_driver = :selenium_chrome
-  Capybara.default_driver = :selenium_chrome
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -54,6 +58,7 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = false
+  config.include Capybara::DSL
 
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
