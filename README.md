@@ -37,6 +37,10 @@ In auto-correct mode, RuboCop will try to automatically fix offenses:
 ```bash
 rubocop -A
 
+### Run test
+- bundle exec rspec spec/users_spec.rb
+- bundle exec rspec spec/posts_spec.rb 
+
 ### Commands
 I will be using the following commands:
 rake db:migrate
