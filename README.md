@@ -4,7 +4,7 @@
 # Blog-App
 
 ## Description 🏗️
-I will add forms to allow users to add comments and likes to posts on behalf of the correct user
+I will add integration specs and fix n+1 problem
 
 ## Built With
 
@@ -12,6 +12,11 @@ I will add forms to allow users to add comments and likes to posts on behalf of 
 - PostgreSQL
 
 ### Setup
+rails webpacker:install
+bundle exec rake assets:precompile
+rails db:migrate RAILS_ENV=test
+rails db:migrate RAILS_ENV=development 
+
 
 ### Clone this repository
 
@@ -37,19 +42,23 @@ In auto-correct mode, RuboCop will try to automatically fix offenses:
 ```bash
 rubocop -A
 
-### Commands
-I will be using the following commands:
-rake db:migrate
-bundle install
-rails g controller ControllerName Action1 Action2 
+### Run test
+- bundle exec rspec spec/users_spec.rb
+- bundle exec rspec spec/posts_spec.rb 
 
-## Author
+
+## Authors
 
 👤 **Esi Ogagaoghene**
 
 - GitHub: [ogagaoghene](https://github.com/ogagaoghene)
 - Twitter: [@esi_ogaga](https://twitter.com/esi_ogaga)
-- LinkedIn: [ogagaoghene-esi](https://linkedin.com/in/ogagaoghene-esi
+- LinkedIn: [ogagaoghene-esi](https://linkedin.com/in/ogagaoghene-esi)
+
+👤 **Sharon Odhiambo**
+
+- GitHub: [@sharon-odhiambo](https://github.com/sharon-odhiambo)
+- LinkedIn: [Sharon Odhiambo](https://www.linkedin.com/in/sharonn-odhiambo/)
 
 ## 🤝 Contributors
 

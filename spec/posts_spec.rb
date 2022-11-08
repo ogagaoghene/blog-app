@@ -12,50 +12,79 @@ RSpec.describe 'Posts', type: :system do
                 likes_counter: 0, comments_counter: 0)
   end
 
-  scenario 'page should have images of users' do
-    visit '/users/1/posts'
-    img = page.find('img')
-    expect(img['src']).to(have_content('https://unsplash.com/photos/F_-0BxGuVvo'))
-  end
+  feature 'index page' do
+    scenario 'should rednder the profile of the user' do
+      visit '/users/1/posts'
+      img = page.find('img')
+      expect(img['src']).to(have_content('https://unsplash.com/photos/F_-0BxGuVvo'))
+    end
 
-  scenario 'page should display name of user' do
-    visit '/users/1/posts'
-    expect(page).to(have_content('Tom'))
-  end
+    scenario 'should render the users username' do
+      visit '/users/1/posts'
+      expect(page).to(have_content('Tom'))
+    end
 
-  scenario 'page should display the author of the posts' do
-    visit '/users/1/posts/1'
-    expect(page).to have_content('Tom')
-  end
+    scenario 'should render the number of posts the user has written' do
+      visit '/users/2/posts'
+      expect(page).to(have_content('Number of posts: 3'))
+    end
 
-  scenario 'page should show the number of comments' do
-    visit '/users/1/posts/1'
-    expect(page).to(have_content('Comments: 2'))
-  end
+    scenario 'should render the title of a post' do
+      visit '/users/1/posts'
+      expect(page).to have_content('Post #2')
+    end
 
-  scenario 'page should display the number the number of likes' do
-    visit '/users/1/posts/1'
-    expect(page).to(have_content('Likes: 0'))
-  end
+    scenario 'should render some of the posts body' do
+      visit '/users/1/posts'
+      expect(page).to have_content('This is the first post test by Tom')
+    end
 
-  scenario 'display number of posts' do
-    visit '/users/2/posts'
-    expect(page).to(have_content('Number of posts: 3'))
-  end
+    scenario 'should render the first comments on a post' do
+      visit '/users/1/posts'
+      expect(page).to have_content('Comment 3')
+    end
 
-  scenario 'page should show the dewcription of a post' do
-    visit '/users/1/posts'
-    expect(page).to have_content('Comment 1')
-  end
+    scenario 'should render how many comments a post has' do
+      visit '/users/1/posts'
+      expect(page).to have_content('Comments: 2')
+    end
 
-  scenario 'page should show the first comment of a post' do
-    visit '/users/1/posts'
-    expect(page).to have_content('Comment 1')
-  end
+    scenario 'should render how many likes a post has' do
+      visit '/users/1/posts'
+      expect(page).to have_content('Likes: 0')
+    end
 
-  scenario 'page should show the name of a user that makes a comment' do
-    visit '/users/1/posts/1'
-    expect(page).to have_content('Tom')
-    expect(page).to have_content('Lilly')
+    feature 'show page' do
+      scenario 'should render the title of the post' do
+        visit '/users/1/posts/1'
+        expect(page).to have_content('Post #1')
+      end
+
+      scenario 'should render who wrote the post' do
+        visit '/users/1/posts/1'
+        expect(page).to have_content('Tom')
+      end
+
+      scenario 'should show the number of comments it has' do
+        visit '/users/1/posts/1'
+        expect(page).to(have_content('Comments: 2'))
+      end
+
+      scenario 'should render how many likes it has' do
+        visit '/users/1/posts/1'
+        expect(page).to(have_content('Likes: 0'))
+      end
+
+      scenario 'should render the body of the post' do
+        visit '/users/1/posts/1'
+        expect(page).to have_content('Comment 1')
+      end
+
+      scenario 'should render the username of each commetator' do
+        visit '/users/1/posts/1'
+        expect(page).to have_content('Tom')
+        expect(page).to have_content('Lilly')
+      end
+    end
   end
 end
