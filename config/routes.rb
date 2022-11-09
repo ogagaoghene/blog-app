@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :logins
   resources :users do
     resources :posts
   end
