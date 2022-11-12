@@ -10,9 +10,18 @@ RSpec.describe 'Users', type: :feature do
                 photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                 bio: 'Teacher from Poland.', posts_counters: 0)
 
-    @first_post = Post.create(author: @first_user, title: 'Post 1 by Tom', text: 'This is the first post test by Tom',
+    Post.create(author: @first_user, title: 'Post 1 by Tom', text: 'This is the first post test by Tom',
                 likes_counter: 0,
                 comments_counter: 0)
+    
+    Post.create(author: @first_user, title: 'Post 1 by Tom', text: 'This is the second post test by Tom',
+                likes_counter: 0,
+                comments_counter: 0)
+    
+    Post.create(author: @first_user, title: 'Post 1 by Tom', text: 'This is the fifth post test by Tom',
+                likes_counter: 0,
+                comments_counter: 0)
+
     @second_post = Post.create(author: @second_user, title: 'Post 2 by Lilly', text: 'This is the first post test by Lilly',
                 likes_counter: 0, comments_counter: 0)
   end
@@ -43,15 +52,17 @@ RSpec.describe 'Users', type: :feature do
     end
 
     describe 'show page' do
-      it 'should redirect to the show page of a user when I click on a user ' do
-        visit user_path(@first_user.id)
-        expect(page).to have_content(@first_user.name)
-        expect(page).to have_content(@first_user.bio)
+      it 'should redirect to the show page of a user when I clicked on a user ' do
+        visit users_path
+        link = page.first('a')
+        link.click
+        expect(page).to have_current_path(user_path(@first_user.id))
       end
 
-      it 'should render the name of the user' do
+      it 'should render the username of all other users' do
         visit user_path(@first_user.id)
-        expect(page).to have_content(@first_user.name)
+        username = page.find('.users_name')
+        expect(username).to have_content(@first_user.name)
       end
 
       it 'should render the profile page of the user' do
@@ -60,13 +71,18 @@ RSpec.describe 'Users', type: :feature do
         expect(image['src']).to have_content('https://unsplash.com/photos/F_-0BxGuVvo')
       end
 
+      it 'should render the name of the user' do
+        visit user_path(@first_user.id)
+        expect(page).to have_content(@first_user.name)
+      end
+
       it 'should display the post counter of the user' do
         visit user_path(@first_user.id)
         expect(page).to have_content(@first_user.posts_counters)
       end
 
       it 'should render the users first 3 posts' do
-        visit '/users/1'
+        visit user_path(@first_user.id)
         posts = page.all('.post_list')
         expect(posts[0]).to have_content('This is the fifth post test by Tom')
         expect(posts[1]).to have_content('This is the second post test by Tom')
