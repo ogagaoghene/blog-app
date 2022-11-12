@@ -77,7 +77,6 @@ GEM
     bullet (7.0.3)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
-    byebug (11.1.3)
     capybara (3.38.0)
       addressable
       matrix
@@ -90,12 +89,6 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
-    database_cleaner (2.0.1)
-      database_cleaner-active_record (~> 2.0.0)
-    database_cleaner-active_record (2.0.1)
-      activerecord (>= 5.a)
-      database_cleaner-core (~> 2.0.0)
-    database_cleaner-core (2.0.1)
     diff-lcs (1.5.0)
     erubi (1.11.0)
     ffi (1.15.5-x64-mingw-ucrt)
@@ -172,23 +165,23 @@ GEM
     rake (13.0.6)
     regexp_parser (2.6.0)
     rexml (3.2.5)
-    rspec-core (3.12.0)
-      rspec-support (~> 3.12.0)
-    rspec-expectations (3.12.0)
+    rspec-core (3.9.3)
+      rspec-support (~> 3.9.3)
+    rspec-expectations (3.9.4)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.12.0)
-    rspec-mocks (3.12.0)
+      rspec-support (~> 3.9.0)
+    rspec-mocks (3.9.1)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.12.0)
-    rspec-rails (6.0.1)
-      actionpack (>= 6.1)
-      activesupport (>= 6.1)
-      railties (>= 6.1)
-      rspec-core (~> 3.11)
-      rspec-expectations (~> 3.11)
-      rspec-mocks (~> 3.11)
-      rspec-support (~> 3.11)
-    rspec-support (3.12.0)
+      rspec-support (~> 3.9.0)
+    rspec-rails (3.9.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.9.0)
+      rspec-expectations (~> 3.9.0)
+      rspec-mocks (~> 3.9.0)
+      rspec-support (~> 3.9.0)
+    rspec-support (3.9.4)
     rubocop (1.38.0)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -258,7 +251,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.4)
+    zeitwerk (2.6.6)
 
 PLATFORMS
   x64-mingw-ucrt
@@ -267,15 +260,13 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
   bullet
-  byebug
   capybara
-  database_cleaner
   ffi
   jbuilder (~> 2.7)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)
-  rspec-rails
+  rspec-rails (~> 3.8)
   rubocop
   sass-rails (>= 6)
   selenium-webdriver
