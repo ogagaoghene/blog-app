@@ -55,10 +55,6 @@ rubocop -A
 - Twitter: [@esi_ogaga](https://twitter.com/esi_ogaga)
 - LinkedIn: [ogagaoghene-esi](https://linkedin.com/in/ogagaoghene-esi)
 
-👤 **Sharon Odhiambo**
-
-- GitHub: [@sharon-odhiambo](https://github.com/sharon-odhiambo)
-- LinkedIn: [Sharon Odhiambo](https://www.linkedin.com/in/sharonn-odhiambo/)
 
 ## 🤝 Contributors
 
