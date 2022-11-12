@@ -3,27 +3,28 @@ require 'rails_helper'
 RSpec.describe 'Users', type: :feature do
   before(:each) do
     @first_user = User.create(name: 'Tom',
-                         photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                         bio: 'Teacher from Mexico.', posts_counters: 0)
+                              photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                              bio: 'Teacher from Mexico.', posts_counters: 0)
 
     @second_user = User.create(name: 'Lilly',
-                photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                bio: 'Teacher from Poland.', posts_counters: 0)
+                               photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                               bio: 'Teacher from Poland.', posts_counters: 0)
 
     Post.create(author: @first_user, title: 'Post 1 by Tom', text: 'This is the first post test by Tom',
                 likes_counter: 0,
                 comments_counter: 0)
-    
-    Post.create(author: @first_user, title: 'Post 1 by Tom', text: 'This is the second post test by Tom',
-                likes_counter: 0,
-                comments_counter: 0)
-    
-    Post.create(author: @first_user, title: 'Post 1 by Tom', text: 'This is the fifth post test by Tom',
+
+    Post.create(author: @first_user, title: 'Post 2 by Tom', text: 'This is the second post test by Tom',
                 likes_counter: 0,
                 comments_counter: 0)
 
-    @second_post = Post.create(author: @second_user, title: 'Post 2 by Lilly', text: 'This is the first post test by Lilly',
-                likes_counter: 0, comments_counter: 0)
+    Post.create(author: @first_user, title: 'Post 5 by Tom', text: 'This is the fifth post test by Tom',
+                likes_counter: 0,
+                comments_counter: 0)
+
+    @second_post = Post.create(author: @second_user, title: 'Post 2 by Lilly',
+                               text: 'This is the first post test by Lilly',
+                               likes_counter: 0, comments_counter: 0)
   end
 
   describe 'index page' do
