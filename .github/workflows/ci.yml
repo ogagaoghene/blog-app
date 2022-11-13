@@ -9,7 +9,7 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_USER: postgres
+          POSTGRES_USER: oracle
           POSTGRES_PASSWORD: 9879Oracle
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
@@ -55,12 +55,12 @@ jobs:
           bundle exec rake db:schema:load
         env:
           RAILS_ENV: test
-          POSTGRES_USER: postgres
+          POSTGRES_USER: oracle
           POSTGRES_PASSWORD: 9879Oracle
 
       - name: Run RSpec
         run: COVERAGE=true bundle exec rspec  --require rails_helper
         env:
           RAILS_ENV: test
-          POSTGRES_USER: postgres
+          POSTGRES_USER: oracle
           POSTGRES_PASSWORD: 9879Oracle
