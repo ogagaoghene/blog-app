@@ -301,9 +301,63 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   column-gap: 16px;
-  width: 80%;
+  width: 50%;
   margin: 0 auto;
   padding: 18px;
-  border: 1px solid green;
 }
+
+.devise__grid_container h2 {
+  text-align: center;
+  padding: 10px;
+}
+
+.devise__grid_container .sign_in {
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+}
+
+.devise__grid_container .sign_up {
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+}
+
+.devise__grid_container .txt_input {
+  margin-top: 10px;
+  padding: 10px;
+  width: 80%;
+}
+
+.devise__grid_container .chk_box {
+  margin-top: 10px;
+  margin-left: 50px;
+  font-size: 12px;
+  width: 80%;
+  text-align: left;
+  padding: 5px;
+}
+
+.devise__grid_container .bttn_login {
+  margin-top: 5px;
+  padding: 10px;
+  width: 80%;
+}
+
+.devise__grid_container .bttn_signup {
+  margin-top: 5px;
+  padding: 10px;
+  width: 80%;
+}
+
+.devise__grid_container .shared_links {
+  margin-top: 5px;
+  padding: 5px;
+  width: 80%;
+  font-size: 13px;
+  width: 80%;
+  margin-left: 50px;
+  text-decoration: none;
+}
+
 /* stylelint-enable */
