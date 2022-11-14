@@ -36,6 +36,8 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
@@ -75,9 +77,6 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   config.action_mailer.perform_deliveries = true
-  
   config.action_mailer.delivery_method = :smtp 
-
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 end
