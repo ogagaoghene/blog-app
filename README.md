@@ -43,8 +43,8 @@ In auto-correct mode, RuboCop will try to automatically fix offenses:
 rubocop -A
 
 ### Run test
-- bundle exec rspec spec/users_spec.rb
-- bundle exec rspec spec/posts_spec.rb 
+- bundle exec rspec spec/feature/users_spec.rb
+- bundle exec rspec spec/feature/posts_spec.rb 
 
 
 ## Authors
