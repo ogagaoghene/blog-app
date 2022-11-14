@@ -62,6 +62,12 @@ rubocop -A
 - Twitter: [@looh16](https://twitter.com/custodiolanga1)
 - LinkedIn: [@looh16](https://www.linkedin.com/in/custodio-serafim) 
 
+👤 **Onomeh Onwuanibe**
+
+- GitHub: [@githubhandle](https://github.com/Estherstarr/)
+- Twitter: [@twitterhandle](https://twitter.com/AnibeEsther)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/onwuanibeonome)
+
 
 ## 🤝 Contributors
 
