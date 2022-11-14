@@ -55,10 +55,19 @@ rubocop -A
 - Twitter: [@esi_ogaga](https://twitter.com/esi_ogaga)
 - LinkedIn: [ogagaoghene-esi](https://linkedin.com/in/ogagaoghene-esi)
 
-👤 **Sharon Odhiambo**
 
-- GitHub: [@sharon-odhiambo](https://github.com/sharon-odhiambo)
-- LinkedIn: [Sharon Odhiambo](https://www.linkedin.com/in/sharonn-odhiambo/)
+👤 **Custodio Serafim**
+
+- GitHub: [@looh16](https://github.com/looh16)
+- Twitter: [@looh16](https://twitter.com/custodiolanga1)
+- LinkedIn: [@looh16](https://www.linkedin.com/in/custodio-serafim) 
+
+👤 **Onomeh Onwuanibe**
+
+- GitHub: [@githubhandle](https://github.com/Estherstarr/)
+- Twitter: [@twitterhandle](https://twitter.com/AnibeEsther)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/onwuanibeonome)
+
 
 ## 🤝 Contributors
 
