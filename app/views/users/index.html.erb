@@ -1,4 +1,6 @@
+<% name = current_login.present? ? current_login.email : 'Stranger' %>
 <section class="grid__container">
+<em>Welcome, <%= name %><em>
 <div>
   <ul>
   <% @users.each do |user| %>

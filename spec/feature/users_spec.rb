@@ -1,98 +1,75 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :feature do
-  before(:each) do
-    @first_user = User.create(name: 'Tom',
-                              photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                              bio: 'Teacher from Mexico.', posts_counters: 0)
-
-    @second_user = User.create(name: 'Lilly',
-                               photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                               bio: 'Teacher from Poland.', posts_counters: 0)
-
-    Post.create(author: @first_user, title: 'Post 1 by Tom', text: 'This is the first post test by Tom',
+RSpec.describe 'Users', type: :system do
+  before(:all) do
+    @lilly = User.create(name: 'Lilly',
+                         photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                         bio: 'Teacher from Poland.', posts_counters: 0)
+    User.create(name: 'Tom',
+                photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                bio: 'Teacher from Mexico.', posts_counters: 0)
+    Post.create(author: @lilly, title: 'Post 1 by Lilly', text: 'This is the third post test by Lilly',
                 likes_counter: 0,
                 comments_counter: 0)
-
-    Post.create(author: @first_user, title: 'Post 2 by Tom', text: 'This is the second post test by Tom',
-                likes_counter: 0,
-                comments_counter: 0)
-
-    Post.create(author: @first_user, title: 'Post 5 by Tom', text: 'This is the fifth post test by Tom',
-                likes_counter: 0,
-                comments_counter: 0)
-
-    @second_post = Post.create(author: @second_user, title: 'Post 2 by Lilly',
-                               text: 'This is the first post test by Lilly',
-                               likes_counter: 0, comments_counter: 0)
+    Post.create(author: @lilly, title: 'Post 2 by Lilly', text: 'TThis is the fourth post test by Lilly',
+                likes_counter: 0, comments_counter: 0)
   end
 
   describe 'index page' do
-    it 'should render the names of all other users' do
+    it 'should render names of users' do
       visit users_path
       expect(page).to have_content('Tom')
       expect(page).to have_content('Lilly')
     end
 
-    it 'should render the profile picture for each user' do
+    it 'should display the picture in users profile' do
       visit users_path
-      expect(page).to have_css("img[src*='#{@first_user.photo}']")
-      expect(page).to have_css("img[src*='#{@second_user.photo}']")
+      images = page.all('img')
+      expect(images[0]['src']).to have_content('https://unsplash.com/photos/F_-0BxGuVvo')
+      expect(images[1]['src']).to have_content('https://unsplash.com/photos/F_-0BxGuVvo')
+    end
+
+    it 'should redirect to the page of a user when clicked' do
+      visit users_path
+      link = page.first('a')
+      link.click
+      expect(page).to have_current_path('/users/1')
     end
 
     it 'shows the number of posts each user has written' do
       visit users_path
-      expect(page).to have_content(@first_user.posts_counters)
-      expect(page).to have_content(@second_user.posts_counters)
+      posts_counter = page.all('.posts-counter')
+      expect(posts_counter[0]).to have_content('Number of posts: 3')
+      expect(posts_counter[1]).to have_content('Number of posts: 3')
     end
 
     it 'when I click on a user, I am redirected to that users show page' do
       visit users_path
-      click_link(@first_user.name)
-      expect(page).to have_content(@first_user.name)
+      link = page.first('a')
+      link.click
+      expect(page).to have_current_path('/users/1')
     end
 
     describe 'show page' do
-      it 'should redirect to the show page of a user when I clicked on a user ' do
-        visit users_path
-        link = page.first('a')
-        link.click
-        expect(page).to have_current_path(user_path(@first_user.id))
-      end
-
-      it 'should render the username of all other users' do
-        visit user_path(@first_user.id)
-        username = page.find('.users_name')
-        expect(username).to have_content(@first_user.name)
-      end
-
       it 'should render the profile page of the user' do
-        visit user_path(@first_user.id)
+        visit '/users/1'
         image = page.find('img')
         expect(image['src']).to have_content('https://unsplash.com/photos/F_-0BxGuVvo')
       end
 
-      it 'should render the name of the user' do
-        visit user_path(@first_user.id)
-        expect(page).to have_content(@first_user.name)
+      it 'should display the name of the user' do
+        visit '/users/1'
+        expect(page).to have_content('Tom')
       end
 
       it 'should display the post counter of the user' do
-        visit user_path(@first_user.id)
-        expect(page).to have_content(@first_user.posts_counters)
-      end
-
-      it 'should render the users first 3 posts' do
-        visit user_path(@first_user.id)
-        posts = page.all('.post_list')
-        expect(posts[0]).to have_content('This is the fifth post test by Tom')
-        expect(posts[1]).to have_content('This is the second post test by Tom')
-        expect(posts[2]).to have_content('This is the first post test by Tom')
+        visit '/users/1'
+        expect(page).to have_content('Number of posts: 3')
       end
 
       it 'should display the bio of users' do
-        visit user_path(@first_user.id)
-        expect(page).to have_content(@first_user.bio)
+        visit '/users/1'
+        expect(page).to have_content('Teacher from Mexico.')
       end
     end
   end

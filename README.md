@@ -4,7 +4,7 @@
 # Blog-App
 
 ## Description 🏗️
-I will add integration specs and fix n+1 problem
+I will add the gem 'devise' for authentication 
 
 ## Built With
 
@@ -12,11 +12,6 @@ I will add integration specs and fix n+1 problem
 - PostgreSQL
 
 ### Setup
-rails webpacker:install
-bundle exec rake assets:precompile
-rails db:migrate RAILS_ENV=test
-rails db:migrate RAILS_ENV=development 
-
 
 ### Clone this repository
 
@@ -42,18 +37,19 @@ In auto-correct mode, RuboCop will try to automatically fix offenses:
 ```bash
 rubocop -A
 
-### Run test
-- bundle exec rspec spec/feature/users_spec.rb
-- bundle exec rspec spec/feature/posts_spec.rb 
+### Commands
+I will be using the following commands:
+rake db:migrate
+bundle install
+rails g controller ControllerName Action1 Action2 
 
-
-## Authors
+## Author
 
 👤 **Esi Ogagaoghene**
 
 - GitHub: [ogagaoghene](https://github.com/ogagaoghene)
 - Twitter: [@esi_ogaga](https://twitter.com/esi_ogaga)
-- LinkedIn: [ogagaoghene-esi](https://linkedin.com/in/ogagaoghene-esi)
+- LinkedIn: [ogagaoghene-esi](https://linkedin.com/in/ogagaoghene-esi
 
 
 👤 **Custodio Serafim**
@@ -67,7 +63,6 @@ rubocop -A
 - GitHub: [@githubhandle](https://github.com/Estherstarr/)
 - Twitter: [@twitterhandle](https://twitter.com/AnibeEsther)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/onwuanibeonome)
-
 
 ## 🤝 Contributors
 
