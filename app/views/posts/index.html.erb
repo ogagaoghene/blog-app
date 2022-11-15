@@ -11,7 +11,7 @@
     <ul>
       <% @posts = Post.where(user_id: @users.id) %> 
         <% @posts.each do |post| %>
-        <li>
+        <li class="users_name">
           <a href="/users/<%= @users.id %>/posts/<%= post.id %>">
             <h3>Post #<%= post[:id] %> <br /></h3>
             <p> <%= post[:text] %> </p>

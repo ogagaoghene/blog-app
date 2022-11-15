@@ -51,6 +51,13 @@ rails g controller ControllerName Action1 Action2
 - Twitter: [@esi_ogaga](https://twitter.com/esi_ogaga)
 - LinkedIn: [ogagaoghene-esi](https://linkedin.com/in/ogagaoghene-esi
 
+
+👤 **Custodio Serafim**
+
+- GitHub: [@looh16](https://github.com/looh16)
+- Twitter: [@looh16](https://twitter.com/custodiolanga1)
+- LinkedIn: [@looh16](https://www.linkedin.com/in/custodio-serafim) 
+
 ## 🤝 Contributors
 
 Contributions, issues, and feature requests are greatly appreciated!

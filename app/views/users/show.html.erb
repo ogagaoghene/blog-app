@@ -2,7 +2,7 @@
   <div>
     <div class="card">
       <img src= '<%= @users.photo %>' alt="user image" width="100" height="100" />
-      <div>
+      <div class="users_name">
         <h3><%= @users.name %></h3>
         <p>Number of posts:  <%= @users.posts_counters %></p>
       </div>
@@ -22,7 +22,7 @@
         <% if @users.posts_counters > 0 %>
         <% @posts = Post.where(user_id: @users.id) %> 
         <% @users.three_recent_posts.each do |post| %>
-          <li class="post">
+          <li class="post_list">
             <a href="/users/<%= @users.id %>/posts/<%= post.id %>" class = 'user_clickable'>
               <h3>Post #<%= post[:id] %> <br /></h3>
               <p> <%= post[:text] %> </p>
