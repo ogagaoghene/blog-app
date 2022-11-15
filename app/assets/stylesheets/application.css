@@ -1,3 +1,4 @@
+ /* stylelint-disable */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -359,5 +360,4 @@ body {
   margin-left: 50px;
   text-decoration: none;
 }
-
 /* stylelint-enable */
