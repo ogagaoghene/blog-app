@@ -1,22 +1,22 @@
 <% name = current_login.present? ? current_login.email : 'Stranger' %>
 <section class="grid__container">
-<em>Welcome, <%= name %><em>
-<div>
-  <ul>
-  <% @users.each do |user| %>
-  <% @posts = Post.where(user_id: user.id) %>
-    <li>
-      <a href= "/users/<%= user.id %>" >
-        <div class='card'>
-          <img src= '<%= user.photo %>' alt="user image" width="100" height="100" />
-          <div>
-            <h3><%= user.name %></h3>
-            <p class="posts-counter">Number of posts:  <%= @posts.length %></p>
-          </div>
-        </div>
-      </a> 
-    </li>
-    <% end %>
-  </ul>
-</div>
+  <em>Welcome, <%= name %><em>
+  <div>
+    <ul>
+      <% @users.each do |user| %>
+      <% @posts = Post.where(user_id: user.id) %>
+        <li>
+          <a href= "/users/<%= user.id %>" >
+            <div class='card'>
+              <img src= '<%= user.photo %>' alt="user image" width="100" height="100" />
+              <div>
+                <h3><%= user.name %></h3>
+                <p class="posts-counter">Number of posts:  <%= @posts.length %></p>
+              </div>
+            </div>
+          </a> 
+        </li>
+        <% end %>
+    </ul>
+  </div>
 </section>
