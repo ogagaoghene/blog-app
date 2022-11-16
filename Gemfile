@@ -36,6 +36,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'open_letter'
 end
 
 group :development do
