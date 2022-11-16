@@ -47,6 +47,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'bullet'
+gem 'cancancan'
 gem 'devise'
 gem 'ffi'
 gem 'rubocop'

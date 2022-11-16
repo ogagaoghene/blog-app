@@ -4,7 +4,7 @@
 # Blog-App
 
 ## Description 🏗️
-I will add the gem 'cancancan' for authorization 
+I will add the gem 'cancancan' for authorization. 
 
 ## Built With
 
