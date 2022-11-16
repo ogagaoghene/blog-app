@@ -62,7 +62,6 @@ rails g controller ControllerName Action1 Action2
 
 - GitHub: [@githubhandle](https://github.com/Estherstarr/)
 - Twitter: [@twitterhandle](https://twitter.com/AnibeEsther)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/onwuanibeonome)
 
 ## 🤝 Contributors
 
