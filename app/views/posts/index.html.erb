@@ -26,6 +26,10 @@
             </li>
         <% end %>
 
+        <% if can? :destroy, @posts %>
+        <%= button_to "Delete Post", user_posts_path(@posts), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+      <% end %>
+  
         
     </ul>
   </div>

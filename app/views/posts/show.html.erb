@@ -18,9 +18,5 @@
       <% end %>
     <% end %>
 
-    <% if can? :destroy, @posts %>
-      <%= button_to "Delete Post", user_post_path(@posts), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
-    <% end %>
-
   </ul>
 </section>
