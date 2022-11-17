@@ -28,7 +28,7 @@ RSpec.describe 'Posts', type: :feature do
     end
 
     scenario 'page should display name of user' do
-      visit user_posts_path(user.id)
+      visit user_posts_path(user.id) 
       expect(page).to have_content('Tom')
     end
 

@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    add_post = current_user.posts.new(add_post_data)
+    add_post = current_login.posts.new(add_post_data)
     add_post.likes_counter = 0
     add_post.comments_counter = 0
     respond_to do |format|
@@ -26,6 +26,12 @@ class PostsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    @posts = Post.find(params[:id])
+    @posts.destroy
+    redirect_to login_posts_path(current_login), notice: "Successfully deleted the post #{@posts.title}."
   end
 
   private
