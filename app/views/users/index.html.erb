@@ -1,4 +1,4 @@
-<% name = current_login.present? ? current_login.email : 'Stranger' %>
+<% name = current_user.present? ? current_user.email : 'Stranger' %>
 <section class="grid__container">
   <em>Welcome, <%= name %><em>
   <div>
