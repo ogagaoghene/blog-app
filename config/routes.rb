@@ -14,16 +14,22 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       # We are going to list our resources here
+      resources :users,only: [:index,:show] do
+        resources :posts, only: [:index, :show] do
+          resources :comments, only: [:index, :create]
+        end
+      end 
+
     end 
   end
 
 
-  resources :users, only: %i[index show] do
-    resources :posts, only: %i[index show new create]
+  resources :users ,only: [:index, :show, ] do
+    resources :posts, only: [:index, :create, :new, :show, :destroy] do
+      resources :comments, only: [:index, :create, :destroy]
+      resources :likes, only: [:index, :create, :destroy]
+    end
   end
 
-  resources :posts do
-    resources :comments, only: %i[new, create]
-    resources :likes, only: %i[create]
-  end
+
 end
