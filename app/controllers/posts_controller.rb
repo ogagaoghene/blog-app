@@ -35,6 +35,7 @@ class PostsController < ApplicationController
   end
 
   private
+
   def add_post_data
     params.require(:posts).permit(:title, :text)
   end
