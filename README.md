@@ -47,9 +47,11 @@ rails g controller ControllerName Action1 Action2
 
 👤 **Esi Ogagaoghene**
 
+- GitHub: [@githubhandle](https://github.com/ogagaoghene) 
+
 - GitHub: [ogagaoghene](https://github.com/ogagaoghene)
 - Twitter: [@esi_ogaga](https://twitter.com/esi_ogaga)
-- LinkedIn: [ogagaoghene-esi](https://linkedin.com/in/ogagaoghene-esi
+- LinkedIn: [ogagaoghene-esi](https://linkedin.com/in/ogagaoghene-esi)
 
 
 👤 **Custodio Serafim**
