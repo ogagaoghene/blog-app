@@ -10,7 +10,7 @@ class Api::V1::PostsController < ApplicationController
 
   def show
     @users = User.find(params[:user_id])
-    @posts = @user.posts.find(params[:id])
+    @posts = @users.posts.find(params[:id])
     respond_to do |format|
       format.json { render json: @posts }
     end
