@@ -36,6 +36,7 @@ In auto-correct mode, RuboCop will try to automatically fix offenses:
 
 ```bash
 rubocop -A
+```
 
 ### Commands
 I will be using the following commands:
@@ -46,8 +47,6 @@ rails g controller ControllerName Action1 Action2
 ## Author
 
 👤 **Esi Ogagaoghene**
-
-- GitHub: [@githubhandle](https://github.com/ogagaoghene) 
 
 - GitHub: [ogagaoghene](https://github.com/ogagaoghene)
 - Twitter: [@esi_ogaga](https://twitter.com/esi_ogaga)
