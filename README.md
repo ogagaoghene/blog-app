@@ -4,7 +4,7 @@
 # Blog-App
 
 ## Description 🏗️
-I will add the gem 'devise' for authentication 
+I will add API endpoints to my Blop App
 
 ## Built With
 
@@ -36,6 +36,7 @@ In auto-correct mode, RuboCop will try to automatically fix offenses:
 
 ```bash
 rubocop -A
+```
 
 ### Commands
 I will be using the following commands:
@@ -49,7 +50,7 @@ rails g controller ControllerName Action1 Action2
 
 - GitHub: [ogagaoghene](https://github.com/ogagaoghene)
 - Twitter: [@esi_ogaga](https://twitter.com/esi_ogaga)
-- LinkedIn: [ogagaoghene-esi](https://linkedin.com/in/ogagaoghene-esi
+- LinkedIn: [ogagaoghene-esi](https://linkedin.com/in/ogagaoghene-esi)
 
 
 👤 **Custodio Serafim**
@@ -62,7 +63,6 @@ rails g controller ControllerName Action1 Action2
 
 - GitHub: [@githubhandle](https://github.com/Estherstarr/)
 - Twitter: [@twitterhandle](https://twitter.com/AnibeEsther)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/onwuanibeonome)
 
 ## 🤝 Contributors
 

@@ -1,19 +1,22 @@
 <section class="grid__container">
   <div class="add_comments_likes">
-  <span>Post #<%= @posts[:id] %>  by <%= @posts.author.name %></span>
-    <%= form_with url: "/posts/#{@posts.id}/likes", scope: :like do |f| %>
-      
-      <span class="right"><%= f.submit "Like", class: 'bttn_likes' %>
-      Comments: <%= @posts[:comments_counter] %> Likes: <%= @posts[:likes_counter] %> </span>
+    <span>Post #<%= @posts[:id] %>  by <%= @posts.author.name %></span>
+      <%= form_with url: "/posts/#{@posts.id}/likes", scope: :like do |f| %>
+        <span class="right"><%= f.submit "Like", class: 'bttn_likes' %>
+        Comments: <%= @posts[:comments_counter] %> Likes: <%= @posts[:likes_counter] %> </span>
       <% end %> 
   </div>
-
-  <div><%= render partial: "add_comments",  local: { post: @posts } %></div>
+  <div><%= render partial: "add_comments",  local: {post: @posts, comment: @comments} %></div>
   <ul class="card__post_by_id_comments">
     <% @posts.comments.each do |comment| %>
       <li>
         <h5> <%= comment.author.name %>: <%= comment.text %></h5>
       </li>
+
+      <% if can? :destroy, comment %>
+        <%= link_to "Delete Comment", user_post_comment_path(@posts, comment ), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>,
+      <% end %>
     <% end %>
+
   </ul>
 </section>

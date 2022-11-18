@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '02450df4522e495ece3d02df287f2b1aa83cdabe4c053621df851ad002f14a3c30555f0eada0b2ad7bc4a7f4a4b89b5d026eee76821351cf61a434240c2010d3'
+  # config.secret_key = 'f80d8301bd9841d6b470bd0b64fd25d904d0a0ce29cc87f31a52417eab5ce88c9228e74abe38871d934e184de2d443caec325a3c9bb3395a4a2ea89adf988d3a'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -24,8 +24,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'otipuebi@gmail.com'
-  config.timeout_in = 1.minute # 8.hours
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -127,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '5e0985349a097f5e7a98cf6b15154b1c9cdc0d4c5acc1c5be5475422ad32d2f95e0fba0f100fd2bf0293989b38d8ac45058ce392aecefb0b0481268298ca8390'
+  # config.pepper = 'e385daddd5d30ff8890dfe67ce3149e7dec996296a6162edba3c752c97a73f400ce35ddaa714e460900c10c45e7ff1ebaebf9242a68cd6cbb2799d0a45b77fad'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -268,6 +267,17 @@ Devise.setup do |config|
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
+
+  config.jwt do |jwt|
+    jwt.secret = ENV['DEVISE_JWT_SECRET_KEY']
+    jwt.dispatch_requests = [
+      ['POST', %r{^/sign_in$}]
+    ]
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/sign_out$}]
+    ]
+    jwt.expiration_time = 15.day.to_i
+  end
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting

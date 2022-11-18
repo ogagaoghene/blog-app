@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
   def index
     @users = User.find(params[:user_id])
-    @posts = Post.includes(comments: [:author]).where(posts: { user_id: @users.id })
+    @posts = Post.where(user_id: params[@users.id])
   end
 
   def show
     @posts = Post.find(params[:id])
-    @posts = Post.includes(comments: [:author]).where(posts: { id: params[:id] })[0]
   end
 
   def new
@@ -31,6 +30,6 @@ class PostsController < ApplicationController
   private
 
   def add_post_data
-    params.require(:posts).permit(:title, :text)
+    params.permit(:title, :text)
   end
 end

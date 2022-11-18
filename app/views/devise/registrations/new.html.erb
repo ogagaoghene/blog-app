@@ -6,6 +6,18 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
+        <%= f.text_field :name, placeholder: "Name", autofocus: true, class: 'txt_input', autocomplete: "email" %>
+     </div>
+
+     <div class="field">
+       <%= f.text_field :photo, placeholder: "Photo", autofocus: true, class: 'txt_input', autocomplete: "email" %>
+     </div>
+
+     <div class="field">
+      <%= f.text_field :bio, placeholder: "bio", autofocus: true, class: 'txt_input', autocomplete: "email" %>
+    </div>
+
+      <div class="field">
         <%= f.email_field :email, placeholder: "Email Address", autofocus: true, class: 'txt_input', autocomplete: "email" %>
       </div>
 
