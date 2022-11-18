@@ -33,6 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'dotenv-rails'
   gem 'letter_opener'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
